@@ -1,6 +1,6 @@
 package.path  = '/usr/local/openresty-1.13.6.1/mylua/?.lua;;' .. package.path
 --白名单IP
-local ipTable = "111.205.187.18"
+local ipTable = "11.25.17.18"
 
 local utils = require "lua_utils"
 local clientip = utils.get_clientip()

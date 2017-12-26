@@ -19,7 +19,7 @@ end
 function _M.check_uid_freq(self)
 	--只针对指定接口做限流,其他接口放行
 	local uri = ngx.var.uri
-	if not string.find(uri,"/api/doctor/") then
+	if not string.find(uri,"/api/detail/") then
 		return 1
 	end
 	--获取用户id
