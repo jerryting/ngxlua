@@ -1,6 +1,6 @@
 > 主要目的是防止爬虫、恶意访问等，爬虫本身基本防不住，所以尽量让爬虫爬取时对服务器产生压力控制在带宽和服务器性能允许的范围，并且做一个动态黑名单的规则，比如永久或一段时间内拉黑某个ip、某个用户id，禁止其再访问服务器，即保证后端服务器不受影响，也保证正常用户不受影响。
 
-> web服务器使用openresty，用它主要是出于nginx_lua模块灵活和便捷，当然使用原生nginx也可以，在安装的时候带上lua支持模块，另外 春哥的openresty里 有个限流分流的模块 [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic) 如果想做限流分流，服务降级，灰度等等 这个模块确实也是可以用的，但是如果涉及到用户级别的缓存，比如用户ID有效性，宕机缓存失效等，所以改用redis 做缓存，没有用官方提供的模块。
+> web服务器使用openresty，用它主要是出于nginx_lua模块灵活和便捷的考虑，当然使用原生nginx也可以，在安装的时候带上lua支持模块，另外 春哥的openresty里 有个限流分流的模块 [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic) 如果想做限流分流，服务降级，灰度等等 这个模块确实也是可以用的，但是如果涉及到用户级别的缓存，比如用户ID有效性，宕机缓存失效等，所以改用redis 做缓存，没有用官方提供的模块。
 
 > 运行环境：centos + openresty + lua + redis (安装略)
 
