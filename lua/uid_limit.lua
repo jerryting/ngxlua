@@ -17,6 +17,7 @@ function _M.new(self)
 end
 
 function _M.check_uid_freq(self)
+    -- ngx.var.cookie_auth_token
     -- 只针对指定接口做限流
     local uri = ngx.var.uri
     if not string.find(uri, "/api/doctor/") then
